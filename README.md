@@ -76,7 +76,7 @@ Only one plane was taken from each field. Each image has 6 channels:
 
 Pretrained models expect RGB 3-channel images. There are several ways to make these images compatible:
 1. Convert the brightfield channel to 3 channel (grayscale to RGB)
-2. Assign fluorescent color to 6 channels, combine into RGB image 
+2. Assign fluorescent color to 6 channels, combine into RGB image using [microfilm](https://guiwitz.github.io/microfilm/notebooks/create_plots.html)
 
 ```python
 from microfilm.colorify import multichannel_to_rgb
@@ -84,7 +84,9 @@ from microfilm.colorify import multichannel_to_rgb
 multichannel_to_rgb(cellpainting_image)
 ```
  
-3. Simulate H&E stain. Hematoxylin and eosin stain nuclei and cytoplasm respectively.
+3. Simulate H&E stain. Hematoxylin and eosin stain nuclei and cytoplasm respectively, so cell painting channels that 
+   stain nuclei and cytoplasm can be used to simulate H&E stain with something like [falsecolor](https://github.com/serrob23/falsecolor). However, there is 
+   not a good cytoplasm stain that is equivalent to Eosin, I have tried using actin and mito stains but they are not good.
 
 ```python
 import falsecolor as fc
