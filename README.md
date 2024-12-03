@@ -68,7 +68,6 @@ Only one plane was taken from each field. Each image has 6 channels:
 
 
 # Task
-- [ ] define dataset & collater that loads data from all subdirectories, assigns labels/metadata and combines 6 tiff images into stacked tensor
 - [ ] embed images using any pretrained model
     - [ ] ViT -> imagenet
     - [ ] UNI
